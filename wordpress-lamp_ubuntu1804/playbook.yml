@@ -106,11 +106,11 @@
       tags: [ system ]
 
   # WordPress Configuration
-    - name: Copy WordPress archive
-      copy:
-        src: https://wordpress.org/latest.tar.gz
+    - name: Download WordPress Latest
+      get_url:
+        url: https://wordpress.org/latest.tar.gz
         dest: /tmp/wordpress.tar.gz
-        remote_src: yes
+        mode: '0440'
       tags: [ wordpress ]
 
     - name: Extract WordPress archive
