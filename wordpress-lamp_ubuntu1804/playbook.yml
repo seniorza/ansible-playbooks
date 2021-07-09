@@ -3,6 +3,8 @@
 #########################################################
 ---
 - hosts: all
+  collections:
+    - community.mysql.mysql_db
   become: true
   vars_files:
     - /vars/default.yml
