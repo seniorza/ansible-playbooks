@@ -3,7 +3,6 @@
 #########################################################
 ---
 - hosts: all
-  vars:
   become: true
   vars_files:
     - /vars/default.yml
