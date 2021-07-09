@@ -4,10 +4,22 @@
 ---
 - hosts: all
   vars:
-    - ansible_host_key_checking: false
+    #System Settings
+    php_modules: [ 'php-curl', 'php-gd', 'php-mbstring', 'php-xml', 'php-xmlrpc', 'php-soap', 'php-intl', 'php-zip' ]
+    #MySQL Settings
+    mysql_root_password: "mysqlpass123"
+    mysql_db: "wordpress"
+    mysql_user: "wordpressdb"
+    mysql_password: "wordpress123*"
+    #HTTP Settings
+    http_host: "ntnx.local"
+    http_conf: "ntnx.conf"
+    http_port: "80"
+  ansible_host_key_checking: false
   become: true
-  vars_files:
-    - /vars/default.yml
+
+  #vars_files:
+  #  - /vars/default.yml
 
   tasks:
     - name: Install prerequisites
